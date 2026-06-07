@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WizwaTamplates - Premium Roblox Templates</title>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AQ4py4_zesFF_wRYml9L6GpyHiiAmLdDqJnxU-9mzxyNEzDA-wVp0SDlk8vjxI-jtXibL2m5KptDt8p-&currency=EUR"></script>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0b1220;
+color:white;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:#111b33;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#60a5fa;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+opacity:0.8;
+}
+
+nav a:hover{opacity:1;}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:100px 20px;
+background:linear-gradient(135deg,#1e3a8a,#7c3aed);
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 20px;
+background:#22c55e;
+color:white;
+border-radius:10px;
+text-decoration:none;
+}
+
+/* PRODUCTS */
+.section{
+padding:60px 20px;
+text-align:center;
+}
+
+.products{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.card{
+background:#111b33;
+width:320px;
+border-radius:15px;
+overflow:hidden;
+padding-bottom:20px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+margin:10px 0;
+}
+
+.price{
+color:#22c55e;
+font-size:22px;
+margin-bottom:10px;
+}
+
+.download{
+display:none;
+margin-top:10px;
+padding:10px;
+background:#22c55e;
+border-radius:8px;
+text-decoration:none;
+color:white;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.feature{
+width:250px;
+background:#111b33;
+padding:20px;
+border-radius:10px;
+}
+
+/* FAQ */
+.faq{
+max-width:700px;
+margin:auto;
+text-align:left;
+}
+
+.faq h4{
+margin-top:20px;
+color:#60a5fa;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">WizwaTamplates</div>
+<nav>
+<a href="#products">Products</a>
+<a href="#features">Why us</a>
+<a href="#faq">FAQ</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Sell Roblox Games Faster</h1>
+<p>Premium Roblox templates made for developers who want to earn more.</p>
+<a class="btn" href="#products">View Templates</a>
+</section>
+
+<section class="section" id="products">
+<h2>🔥 Products</h2>
+
+<div class="products">
+
+<!-- CARBODYS -->
+<div class="card">
+<img src="CarBody's.png">
+<h3>CarBody's</h3>
+<div class="price">€2.50</div>
+
+<div id="paypal1"></div>
+<a class="download" id="dl1" href="CarBody's.rbxl">Download</a>
+</div>
+
+<!-- CLICKERSIM -->
+<div class="card">
+<img src="ClickerSIM.png">
+<h3>ClickerSIM</h3>
+<div class="price">€10.00</div>
+
+<div id="paypal2"></div>
+<a class="download" id="dl2" href="ClickerSIM(tamplate).rbxl">Download</a>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="features">
+<h2>💎 Why choose us?</h2>
+
+<div class="features">
+<div class="feature">⚡ Fast setup Roblox games</div>
+<div class="feature">💰 Helps you earn faster</div>
+<div class="feature">🎮 High quality scripts</div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<h2>❓ FAQ</h2>
+<div class="faq">
+<h4>Is this safe?</h4>
+<p>Yes, payments go through PayPal.</p>
+
+<h4>Do I get instant download?</h4>
+<p>Yes, after payment you unlock the download.</p>
+
+<h4>Can I resell templates?</h4>
+<p>No, licenses are for personal use.</p>
+</div>
+</section>
+
+<footer>
+© 2025 WizwaTamplates - All rights reserved
+</footer>
+
+<script>
+
+/* PRODUCT 1 */
+paypal.Buttons({
+createOrder: (data, actions) => {
+return actions.order.create({
+purchase_units: [{ amount: { value: '2.50' } }]
+});
+},
+onApprove: (data, actions) => {
+return actions.order.capture().then(() => {
+document.getElementById("dl1").style.display = "inline-block";
+});
+}
+}).render('#paypal1');
+
+/* PRODUCT 2 */
+paypal.Buttons({
+createOrder: (data, actions) => {
+return actions.order.create({
+purchase_units: [{ amount: { value: '10.00' } }]
+});
+},
+onApprove: (data, actions) => {
+return actions.order.capture().then(() => {
+document.getElementById("dl2").style.display = "inline-block";
+});
+}
+}).render('#paypal2');
+
+</script>
+
+</body>
+</html>
